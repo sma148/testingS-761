@@ -11,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<WebAPIDBContext>(options => options.UseSqlite(builder.Configuration["WebAPIConnection"]));
+builder.Services.AddScoped<IWebAPIRepo, DBWebAPIRepo>();
 
 var app = builder.Build();
 
